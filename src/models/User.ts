@@ -1,7 +1,7 @@
 import { DataTypes, Model } from "sequelize";
 import { sequelize } from "../config/database.js";
 
-class User extends Model {
+export class User extends Model {
   declare id: number;
   declare name: string;
 }
@@ -17,7 +17,4 @@ User.init({
     allowNull: false,
     unique: true
   }
-}, {
-  sequelize,
-  modelName: "Users"
-})
+}, { sequelize, modelName: "Users", timestamps: false })
